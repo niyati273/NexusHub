@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore | NexusHub</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+
+<style>
+  body, button, input, textarea, select {
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
+
+  body {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background: #fff;
+  }
+
+  .brand {
+    font-family: 'Audiowide', Arial, Helvetica, sans-serif !important;
+    font-size: 37px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -2.2px;
+    color: #050505;
+    white-space: nowrap;
+  }
+
+  .search-input {
+    width: 206px;
+  }
+
+  .about-section {
+    margin-top: 32px;
+  }
+
+  .about-title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+
+  .section-heading {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .content-placeholder {
+    min-height: 65px;
+    color: #495057;
+  }
+
+  .faq-list {
+    max-width: 760px;
+  }
+
+  .faq-list .accordion-button {
+    font-family: Arial, Helvetica, sans-serif !important;
+    color: #212529;
+    background: #fff;
+  }
+
+  .faq-list .accordion-button:not(.collapsed) {
+    color: #212529;
+    background: #f8f9fa;
+    box-shadow: none;
+  }
+
+  .faq-list .accordion-button:focus {
+    box-shadow: none;
+    border-color: #dee2e6;
+  }
+
+  .faq-item {
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    background: #fff;
+  }
+
+  @media (max-width: 900px) {
+    .search-area {
+      width: 100%;
+    }
+
+    .search-input {
+      flex: 1;
+      width: auto;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom px-3 py-2">
+  <div class="container-fluid d-flex flex-wrap align-items-center gap-2">
+
+    <span class="brand me-2">NexusHub</span>
+
+    <div class="d-flex align-items-center flex-wrap">
+      <span class="px-3 py-2 rounded text-white bg-success">Home</span>
+      <span class="px-3 py-2 rounded text-primary">Updates</span>
+      <span class="px-3 py-2 rounded text-primary">Resources</span>
+      <span class="px-3 py-2 rounded text-primary">Events</span>
+      <span class="px-3 py-2 rounded text-primary">Login / Sign Up</span>
+    </div>
+
+    <div class="search-area ms-auto d-flex align-items-center gap-2">
+      <input class="form-control search-input" type="text" placeholder="Search">
+      <button class="btn btn-outline-success" type="button">Search</button>
+    </div>
+
+  </div>
+</nav>
+
+<main class="container py-4">
+
+  <section class="about-section">
+    <h1 class="about-title">About NexusHub</h1>
+
+    <h2 class="section-heading mt-4">Content</h2>
+    <div class="content-placeholder">
+      <p>
+        NexusHub is a student-focused platform for discovering learning resources,
+        technical materials, updates, workshops, and useful opportunities.
+      </p>
+      <p>
+        Explore different areas of computer science, build your technical skills,
+        stay updated with opportunities, and find resources that support your
+        academic and professional growth.
+      </p>
+    </div>
+
+    <h2 class="section-heading mt-5">Objectives</h2>
+    <div class="content-placeholder">
+      <ul class="mb-0">
+        <li class="mb-2">Provide students with useful and organized learning resources.</li>
+        <li class="mb-2">Help students strengthen their technical and computer science foundations.</li>
+        <li class="mb-2">Make workshops, events, updates, and opportunities easier to discover.</li>
+        <li>Encourage continuous learning and skill development.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-heading mt-5">FAQs</h2>
+
+    <div class="accordion faq-list mt-3" id="faqAccordion">
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeadingOne">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqOne"
+                  aria-expanded="false"
+                  aria-controls="faqOne">
+            What is NexusHub?
+          </button>
+        </h2>
+        <div id="faqOne" class="accordion-collapse collapse"
+             aria-labelledby="faqHeadingOne"
+             data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            NexusHub is a student hub that brings together learning resources,
+            technical materials, updates, events, workshops, and useful opportunities
+            in one place.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeadingTwo">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqTwo"
+                  aria-expanded="false"
+                  aria-controls="faqTwo">
+            What can I find on NexusHub?
+          </button>
+        </h2>
+        <div id="faqTwo" class="accordion-collapse collapse"
+             aria-labelledby="faqHeadingTwo"
+             data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            You can find technical learning resources, programming materials,
+            computer science topics, updates, events, workshops, and other
+            student-focused opportunities.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeadingThree">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqThree"
+                  aria-expanded="false"
+                  aria-controls="faqThree">
+            Who can use NexusHub?
+          </button>
+        </h2>
+        <div id="faqThree" class="accordion-collapse collapse"
+             aria-labelledby="faqHeadingThree"
+             data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            NexusHub is designed for students who want to learn, improve their
+            technical skills, discover resources, and keep track of useful
+            opportunities and events.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeadingFour">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqFour"
+                  aria-expanded="false"
+                  aria-controls="faqFour">
+            How do I get started?
+          </button>
+        </h2>
+        <div id="faqFour" class="accordion-collapse collapse"
+             aria-labelledby="faqHeadingFour"
+             data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Start by exploring the available resources, updates, and events.
+            If you want to become a member, use the Login / Sign Up section.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

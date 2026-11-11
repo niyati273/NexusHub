@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | NexusHub</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body, button, input, textarea, select {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    body {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      background: #fff;
+    }
+
+    .brand {
+      font-family: 'Audiowide', Arial, Helvetica, sans-serif !important;
+      font-size: 37px;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -2.2px;
+      color: #050505;
+      white-space: nowrap;
+    }
+
+    .search-input {
+      width: 206px;
+    }
+
+    .login-card {
+      max-width: 760px;
+    }
+
+    @media (max-width: 900px) {
+      .search-area {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+    <div class="container-fluid">
+
+      <a class="navbar-brand fs-1"
+         style="font-family: 'Audiowide';"
+         href="index.html">
+        NexusHub
+      </a>
+
+      <div class="navbar-collapse">
+
+        <ul class="nav nav-pills">
+
+          <li class="nav-item">
+            <a class="nav-link"
+               href="index.html"
+               style="font-family: 'Space Grotesk';">
+              Home
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link"
+               href="Updates.html"
+               style="font-family: 'Space Grotesk';">
+              Updates
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link"
+               href="Resources.html"
+               style="font-family: 'Space Grotesk';">
+              Resources
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link"
+               href="Events.html"
+               style="font-family: 'Space Grotesk';">
+              Events
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active"
+               href="Login.html"
+               style="background-color: #56996d; font-family: 'Space Grotesk';">
+              Login / Sign Up
+            </a>
+          </li>
+
+        </ul>
+
+        <!-- SEARCH -->
+        <form class="d-flex ms-auto" role="search">
+
+          <input class="form-control me-2"
+                 type="search"
+                 placeholder="Search"
+                 aria-label="Search">
+
+          <button class="btn btn-outline-success"
+                  type="submit">
+            Search
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- Admin Login -->
+  <main class="container py-4">
+
+    <h1 class="fs-2 fw-normal my-4">Admin Login</h1>
+
+    <div class="card shadow-sm p-4 login-card">
+
+      <!-- Email -->
+      <div class="row g-3 align-items-center">
+
+        <label class="col-md-3 col-form-label" for="email">
+          Email Address
+        </label>
+
+        <div class="col-md-6">
+
+          <input
+            id="email"
+            class="form-control"
+            type="email"
+            placeholder="Enter your admin email address"
+            autocomplete="email"
+            required
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- Send Login Link -->
+      <div class="row g-3 mt-1">
+
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6">
+
+          <button
+            id="loginBtn"
+            class="btn btn-success"
+            type="button"
+          >
+            Send Login Link
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- Status Message -->
+      <p
+        id="statusMessage"
+        class="mt-3 mb-0"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+
+      <!-- Success Message -->
+      <div
+        id="successMessage"
+        class="alert alert-success mt-3 d-none"
+        role="alert"
+      >
+        Login link sent! Please check your email.
+      </div>
+
+      <span class="d-inline-block mt-3">← Back</span>
+
+    </div>
+
+  </main>
+
+
+  <!-- Firebase Authentication -->
+  <script type="module">
+
+    import { initializeApp } from
+      "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+    import {
+      getAuth,
+      sendSignInLinkToEmail,
+      isSignInWithEmailLink,
+      signInWithEmailLink
+    } from
+      "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+    // Firebase Configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDom4NZglA9ZWwLk1OJPNXWEZ2ccV8jByU",
+      authDomain: "nexushub-ed657.firebaseapp.com",
+      projectId: "nexushub-ed657",
+      storageBucket: "nexushub-ed657.firebasestorage.app",
+      messagingSenderId: "643206928035",
+      appId: "1:643206928035:web:d5d8ac522f7181a57c5116",
+      measurementId: "G-49KR06C5NP"
+    };
+
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+
+    // HTML Elements
+    const emailInput = document.getElementById("email");
+    const loginBtn = document.getElementById("loginBtn");
+
+    const statusMessage =
+      document.getElementById("statusMessage");
+
+    const successMessage =
+      document.getElementById("successMessage");
+
+
+    // Display status messages
+    function showStatus(message, isError = false) {
+
+      statusMessage.textContent = message;
+
+      statusMessage.className = isError
+        ? "mt-3 mb-0 text-danger"
+        : "mt-3 mb-0 text-success";
+
+    }
+
+
+    // Send Email Sign-in Link
+    loginBtn.addEventListener("click", async () => {
+
+      const email = emailInput.value.trim();
+
+      if (!email) {
+
+        showStatus("Please enter your email address.", true);
+        emailInput.focus();
+
+        return;
+      }
+
+      if (!emailInput.checkValidity()) {
+
+        showStatus("Please enter a valid email address.", true);
+
+        return;
+      }
+
+      loginBtn.disabled = true;
+
+      showStatus("Sending login link...");
+
+
+      // Supports both Live Server and Firebase Hosting
+      const actionCodeSettings = {
+
+        url: window.location.origin + window.location.pathname,
+
+        handleCodeInApp: true
+
+      };
+
+
+      try {
+
+        await sendSignInLinkToEmail(
+          auth,
+          email,
+          actionCodeSettings
+        );
+
+
+        // Save email for verification
+        window.localStorage.setItem(
+          "nexushubAdminEmail",
+          email
+        );
+
+
+        successMessage.classList.remove("d-none");
+
+        showStatus(
+          "Login link sent! Check your inbox."
+        );
+
+
+      } catch (error) {
+
+        console.error("Email link error:", error);
+
+        let message = "Unable to send login link. Please try again.";
+
+        if (error.code === "auth/invalid-email") {
+
+          message = "Please enter a valid email address.";
+
+        } else if (error.code === "auth/unauthorized-continue-uri") {
+
+          message = "This website domain is not authorized in Firebase.";
+
+        } else if (error.code === "auth/operation-not-allowed") {
+
+          message = "Email link sign-in is not enabled in Firebase.";
+
+        }
+
+        showStatus(message, true);
+
+      } finally {
+
+        loginBtn.disabled = false;
+
+      }
+
+    });
+
+
+    // Complete Sign-in When Admin Opens Email Link
+    async function completeEmailLinkSignIn() {
+
+      if (!isSignInWithEmailLink(auth, window.location.href)) {
+
+        return;
+
+      }
+
+
+      let email = window.localStorage.getItem(
+        "nexushubAdminEmail"
+      );
+
+
+      // If opened on another browser/device
+      if (!email) {
+
+        email = window.prompt(
+          "Please enter the email address where you received the login link:"
+        );
+
+      }
+
+
+      if (!email) {
+
+        showStatus(
+          "Email address is required to complete sign-in.",
+          true
+        );
+
+        return;
+
+      }
+
+
+      try {
+
+        showStatus("Verifying your login link...");
+
+
+        await signInWithEmailLink(
+          auth,
+          email,
+          window.location.href
+        );
+
+
+        // Remove saved email
+        window.localStorage.removeItem(
+          "nexushubAdminEmail"
+        );
+
+
+        successMessage.classList.remove("d-none");
+
+        showStatus(
+          "Login successful! Redirecting..."
+        );
+
+
+        // Clean the URL
+        window.history.replaceState(
+          {},
+          document.title,
+          window.location.pathname
+        );
+
+
+        // Redirect after successful login
+        setTimeout(() => {
+
+          window.location.href = "index_l.html";
+
+        }, 1000);
+
+
+      } catch (error) {
+
+        console.error(
+          "Email link verification error:",
+          error
+        );
+
+        showStatus(
+          "This login link is invalid or has expired. Please request a new one.",
+          true
+        );
+
+      }
+
+    }
+
+
+    // Check if page was opened through Firebase email link
+    completeEmailLinkSignIn();
+
+
+  </script>
+
+</body>
+</html>

@@ -7,7 +7,8 @@
 const upcomingEvents = [
     {
         id: 1,
-        title: "Introduction to AI & Machine Learning",
+        title: "Introduction to AI & Machine Learning abc
+           ",
         category: "Technology",
         status: "Upcoming"
     },

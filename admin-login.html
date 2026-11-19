@@ -1,115 +1,110 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Login | NexusHub</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>NexusHub - Events</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
 
-  <style>
-    body, button, input, textarea, select {
-      font-family: 'Space Grotesk', sans-serif;
-    }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    body {
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 1.5;
-      color: #212529;
-      background: #fff;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee+Outline&display=swap"
+        rel="stylesheet">
 
-    .brand {
-      font-family: 'Audiowide', Arial, Helvetica, sans-serif !important;
-      font-size: 37px;
-      font-weight: 400;
-      line-height: 1;
-      letter-spacing: -2.2px;
-      color: #050505;
-      white-space: nowrap;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
 
-    .search-input {
-      width: 206px;
-    }
-
-    .login-card {
-      max-width: 760px;
-    }
-
-    @media (max-width: 900px) {
-      .search-area {
-        width: 100%;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
 
     <div class="container-fluid">
 
-      <a class="navbar-brand fs-1"
-         style="font-family: 'Audiowide';"
-         href="index.html">
-        NexusHub
-      </a>
+      <button class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarTogglerDemo01"
+              aria-controls="navbarTogglerDemo01"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
 
-      <div class="navbar-collapse">
+        <span class="navbar-toggler-icon"></span>
 
+      </button>
+
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+        <!-- Logo -->
+        <a class="navbar-brand fs-1"
+           style="font-family: 'Audiowide';"
+           href="index.html">
+          NexusHub
+        </a>
+
+
+        <!-- Navigation -->
         <ul class="nav nav-pills">
 
           <li class="nav-item">
             <a class="nav-link"
-               href="index.html"
-               style="font-family: 'Space Grotesk';">
+               style="font-family: 'Space Grotesk';"
+               href="index.html">
               Home
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link"
-               href="Updates.html"
-               style="font-family: 'Space Grotesk';">
+               style="font-family: 'Space Grotesk';"
+               href="Updates.html">
               Updates
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link"
-               href="Resources.html"
-               style="font-family: 'Space Grotesk';">
+               style="font-family: 'Space Grotesk';"
+               href="Resources.html">
               Resources
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link"
+            <a class="nav-link active"
+               aria-current="page"
                href="Events.html"
-               style="font-family: 'Space Grotesk';">
+               style="background-color: #56996d; font-family: 'Space Grotesk';">
               Events
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active"
-               href="Login.html"
-               style="background-color: #56996d; font-family: 'Space Grotesk';">
-              Login / Sign Up
+            <a class="nav-link"
+               style="font-family: 'Space Grotesk';"
+               href="Login.html">
+              Login/Sign Up
             </a>
           </li>
 
         </ul>
 
-        <!-- SEARCH -->
-        <form class="d-flex ms-auto" role="search">
+
+        <!-- Search -->
+        <form class="d-flex ms-auto"
+              role="search">
 
           <input class="form-control me-2"
                  type="search"
@@ -130,325 +125,279 @@
   </nav>
 
 
-  <!-- Admin Login -->
-  <main class="container py-4">
+  <!-- Events Section -->
 
-    <h1 class="fs-2 fw-normal my-4">Admin Login</h1>
+  <div class="container mt-5">
 
-    <div class="card shadow-sm p-4 login-card">
+    <div class="text-center">
 
-      <!-- Email -->
-      <div class="row g-3 align-items-center">
+      <h1 style="font-family: 'Space Grotesk';">
+        Events
+      </h1>
 
-        <label class="col-md-3 col-form-label" for="email">
-          Email Address
-        </label>
-
-        <div class="col-md-6">
-
-          <input
-            id="email"
-            class="form-control"
-            type="email"
-            placeholder="Enter your admin email address"
-            autocomplete="email"
-            required
-          >
-
-        </div>
-
-      </div>
-
-
-      <!-- Send Login Link -->
-      <div class="row g-3 mt-1">
-
-        <div class="col-md-3"></div>
-
-        <div class="col-md-6">
-
-          <button
-            id="loginBtn"
-            class="btn btn-success"
-            type="button"
-          >
-            Send Login Link
-          </button>
-
-        </div>
-
-      </div>
-
-
-      <!-- Status Message -->
-      <p
-        id="statusMessage"
-        class="mt-3 mb-0"
-        role="status"
-        aria-live="polite"
-      ></p>
-
-
-      <!-- Success Message -->
-      <div
-        id="successMessage"
-        class="alert alert-success mt-3 d-none"
-        role="alert"
-      >
-        Login link sent! Please check your email.
-      </div>
-
-      <span class="d-inline-block mt-3">← Back</span>
+      <p class="lead"
+         style="font-family: 'Space Grotesk';">
+        Discover workshops, hackathons, meetups, and other opportunities
+        to learn, connect, and grow.
+      </p>
 
     </div>
 
-  </main>
 
+    <!-- Upcoming Events -->
 
-  <!-- Firebase Authentication -->
-  <script type="module">
+    <h2 class="mt-5 mb-4"
+        style="color: #56996d; font-family: 'Space Grotesk';">
+      Upcoming Events
+    </h2>
 
-    import { initializeApp } from
-      "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-    import {
-      getAuth,
-      sendSignInLinkToEmail,
-      isSignInWithEmailLink,
-      signInWithEmailLink
-    } from
-      "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    <div class="row g-4">
 
 
-    // Firebase Configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyDom4NZglA9ZWwLk1OJPNXWEZ2ccV8jByU",
-      authDomain: "nexushub-ed657.firebaseapp.com",
-      projectId: "nexushub-ed657",
-      storageBucket: "nexushub-ed657.firebasestorage.app",
-      messagingSenderId: "643206928035",
-      appId: "1:643206928035:web:d5d8ac522f7181a57c5116",
-      measurementId: "G-49KR06C5NP"
-    };
+      <!-- Upcoming Event 1 -->
 
+      <div class="col-md-6 col-lg-4">
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+        <div class="card h-100 shadow-sm rounded-4 border-success">
 
+          <div class="card-body p-4">
 
-    // HTML Elements
-    const emailInput = document.getElementById("email");
-    const loginBtn = document.getElementById("loginBtn");
+            <span class="badge text-bg-success mb-3">
+              Workshop
+            </span>
 
-    const statusMessage =
-      document.getElementById("statusMessage");
+            <h4 class="card-title"
+                style="font-family: 'Space Grotesk';">
+              Introduction to AI & Machine Learning
+            </h4>
 
-    const successMessage =
-      document.getElementById("successMessage");
+            <p class="card-text">
+              Learn the fundamentals of AI and machine learning
+              and explore how they are used in real-world applications.
+            </p>
 
+            <p class="mb-2"
+               style="color: #56996d;">
+              <strong>Date:</strong> 10 October 2026
+            </p>
 
-    // Display status messages
-    function showStatus(message, isError = false) {
+            <p class="mb-0">
+              <strong>Mode:</strong> Online
+            </p>
 
-      statusMessage.textContent = message;
+          </div>
 
-      statusMessage.className = isError
-        ? "mt-3 mb-0 text-danger"
-        : "mt-3 mb-0 text-success";
+        </div>
 
-    }
+      </div>
 
 
-    // Send Email Sign-in Link
-    loginBtn.addEventListener("click", async () => {
+      <!-- Upcoming Event 2 -->
 
-      const email = emailInput.value.trim();
+      <div class="col-md-6 col-lg-4">
 
-      if (!email) {
+        <div class="card h-100 shadow-sm rounded-4 border-success">
 
-        showStatus("Please enter your email address.", true);
-        emailInput.focus();
+          <div class="card-body p-4">
 
-        return;
-      }
+            <span class="badge text-bg-success mb-3">
+              Hackathon
+            </span>
 
-      if (!emailInput.checkValidity()) {
+            <h4 class="card-title"
+                style="font-family: 'Space Grotesk';">
+              NexusHub Hackathon
+            </h4>
 
-        showStatus("Please enter a valid email address.", true);
+            <p class="card-text">
+              Build innovative solutions, work with a team,
+              and turn your ideas into working projects.
+            </p>
 
-        return;
-      }
+            <p class="mb-2"
+               style="color: #56996d;">
+              <strong>Date:</strong> 18 October 2026
+            </p>
 
-      loginBtn.disabled = true;
+            <p class="mb-0">
+              <strong>Mode:</strong> Offline
+            </p>
 
-      showStatus("Sending login link...");
+          </div>
 
+        </div>
 
-      // Supports both Live Server and Firebase Hosting
-      const actionCodeSettings = {
+      </div>
 
-        url: window.location.origin + window.location.pathname,
 
-        handleCodeInApp: true
+      <!-- Upcoming Event 3 -->
 
-      };
+      <div class="col-md-6 col-lg-4">
 
+        <div class="card h-100 shadow-sm rounded-4 border-success">
 
-      try {
+          <div class="card-body p-4">
 
-        await sendSignInLinkToEmail(
-          auth,
-          email,
-          actionCodeSettings
-        );
+            <span class="badge text-bg-success mb-3">
+              Tech Talk
+            </span>
 
+            <h4 class="card-title"
+                style="font-family: 'Space Grotesk';">
+              Careers in Software Engineering
+            </h4>
 
-        // Save email for verification
-        window.localStorage.setItem(
-          "nexushubAdminEmail",
-          email
-        );
+            <p class="card-text">
+              Hear from industry professionals about software
+              engineering careers, internships, and skills.
+            </p>
 
+            <p class="mb-2"
+               style="color: #56996d;">
+              <strong>Date:</strong> 25 October 2026
+            </p>
 
-        successMessage.classList.remove("d-none");
+            <p class="mb-0">
+              <strong>Mode:</strong> Online
+            </p>
 
-        showStatus(
-          "Login link sent! Check your inbox."
-        );
+          </div>
 
+        </div>
 
-      } catch (error) {
+      </div>
 
-        console.error("Email link error:", error);
 
-        let message = "Unable to send login link. Please try again.";
+    </div>
 
-        if (error.code === "auth/invalid-email") {
 
-          message = "Please enter a valid email address.";
+    <!-- Past Events -->
 
-        } else if (error.code === "auth/unauthorized-continue-uri") {
+    <div class="bg-light rounded-4 p-4 mt-5">
 
-          message = "This website domain is not authorized in Firebase.";
+      <h2 class="mb-4 text-secondary"
+          style="font-family: 'Space Grotesk';">
+        Past Events
+      </h2>
 
-        } else if (error.code === "auth/operation-not-allowed") {
 
-          message = "Email link sign-in is not enabled in Firebase.";
+      <div class="row g-4">
 
-        }
 
-        showStatus(message, true);
+        <!-- Past Event 1 -->
 
-      } finally {
+        <div class="col-md-6 col-lg-4">
 
-        loginBtn.disabled = false;
+          <div class="card h-100 shadow-sm rounded-4 border-0">
 
-      }
+            <div class="card-body p-4">
 
-    });
+              <span class="badge text-bg-secondary mb-3">
+                Workshop
+              </span>
 
+              <h4 class="card-title text-secondary"
+                  style="font-family: 'Space Grotesk';">
+                Git & GitHub Basics
+              </h4>
 
-    // Complete Sign-in When Admin Opens Email Link
-    async function completeEmailLinkSignIn() {
+              <p class="card-text text-secondary">
+                A beginner-friendly session covering Git,
+                GitHub, repositories, branches, and collaboration.
+              </p>
 
-      if (!isSignInWithEmailLink(auth, window.location.href)) {
+              <p class="mb-0 text-secondary">
+                <strong>Date:</strong> 20 September 2026
+              </p>
 
-        return;
+            </div>
 
-      }
+          </div>
 
+        </div>
 
-      let email = window.localStorage.getItem(
-        "nexushubAdminEmail"
-      );
 
+        <!-- Past Event 2 -->
 
-      // If opened on another browser/device
-      if (!email) {
+        <div class="col-md-6 col-lg-4">
 
-        email = window.prompt(
-          "Please enter the email address where you received the login link:"
-        );
+          <div class="card h-100 shadow-sm rounded-4 border-0">
 
-      }
+            <div class="card-body p-4">
 
+              <span class="badge text-bg-secondary mb-3">
+                Tech Talk
+              </span>
 
-      if (!email) {
+              <h4 class="card-title text-secondary"
+                  style="font-family: 'Space Grotesk';">
+                Getting Started with Open Source
+              </h4>
 
-        showStatus(
-          "Email address is required to complete sign-in.",
-          true
-        );
+              <p class="card-text text-secondary">
+                Learn how students can find projects,
+                make contributions, and build an open-source profile.
+              </p>
 
-        return;
+              <p class="mb-0 text-secondary">
+                <strong>Date:</strong> 12 September 2026
+              </p>
 
-      }
+            </div>
 
+          </div>
 
-      try {
+        </div>
 
-        showStatus("Verifying your login link...");
 
+        <!-- Past Event 3 -->
 
-        await signInWithEmailLink(
-          auth,
-          email,
-          window.location.href
-        );
+        <div class="col-md-6 col-lg-4">
 
+          <div class="card h-100 shadow-sm rounded-4 border-0">
 
-        // Remove saved email
-        window.localStorage.removeItem(
-          "nexushubAdminEmail"
-        );
+            <div class="card-body p-4">
 
+              <span class="badge text-bg-secondary mb-3">
+                Meetup
+              </span>
 
-        successMessage.classList.remove("d-none");
+              <h4 class="card-title text-secondary"
+                  style="font-family: 'Space Grotesk';">
+                Student Tech Meetup
+              </h4>
 
-        showStatus(
-          "Login successful! Redirecting..."
-        );
+              <p class="card-text text-secondary">
+                Connect with other students, share ideas,
+                and discover opportunities to collaborate.
+              </p>
 
+              <p class="mb-0 text-secondary">
+                <strong>Date:</strong> 5 September 2026
+              </p>
 
-        // Clean the URL
-        window.history.replaceState(
-          {},
-          document.title,
-          window.location.pathname
-        );
+            </div>
 
+          </div>
 
-        // Redirect after successful login
-        setTimeout(() => {
+        </div>
 
-          window.location.href = "index_l.html";
 
-        }, 1000);
+      </div>
 
+    </div>
 
-      } catch (error) {
+  </div>
 
-        console.error(
-          "Email link verification error:",
-          error
-        );
 
-        showStatus(
-          "This login link is invalid or has expired. Please request a new one.",
-          true
-        );
+  <!-- Bootstrap JavaScript -->
 
-      }
-
-    }
-
-
-    // Check if page was opened through Firebase email link
-    completeEmailLinkSignIn();
-
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+          crossorigin="anonymous">
   </script>
 
 </body>
+
 </html>
